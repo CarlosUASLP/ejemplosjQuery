@@ -5,11 +5,16 @@ function saluda(){
 }*/
 
 
-$(function()
+/*$(function()
 {
     //alert($('h1').text());
-    /*Se crea un parrafo nuevo en objeto jQuery*/
+    
     $nuevo = $('<p>Parrafo <b>nuevo</b></p>');
     $('h2').after($nuevo);
-})
+
+    $('#btnUno').click(function (e) { 
+        e.preventDefault();
+        
+    });
+})*/
 
