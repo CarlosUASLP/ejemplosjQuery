@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src = "jquery-3.1.1.min.js">  </script>
+</head>
+<body>
+    <button class = "boton"> Boton 1 </button>
+    <button class = "boton"> Boton 2 </button>
+    <button class = "boton"> Boton 3 </button>
+    <P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque officia doloremque vitae repellat excepturi inventore deleniti sit iusto esse vel ipsa ducimus, aliquam quibusdam. 
+        Consequatur sequi reprehenderit ratione quae voluptas.</P>
+    <P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque officia doloremque vitae repellat excepturi inventore deleniti sit iusto esse vel ipsa ducimus, aliquam quibusdam. Consequatur sequi reprehenderit ratione quae voluptas.</P>
+    <P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque officia doloremque vitae repellat excepturi inventore deleniti sit iusto esse vel ipsa ducimus, aliquam quibusdam. Consequatur sequi reprehenderit ratione quae voluptas.</P>
+
+    <script>
+        $(function(){
+            //Simple click
+            $('.boton').click(function(){
+                //se ocultan todos
+                //$('.boton').hide();
+                //Se oculta solo al que le damos click
+                //$(this).hide();
+                $(this).slideUp();
+            })
+
+            //doble click
+            $('.boton').dblclick(function(){
+                
+                $(this).hide();
+            })
+
+            //Cuando pasa el mouse sobre un elemento
+            $('p').mouseenter(function(){
+                $(this).css('color', 'green');
+            })
+
+            //Si no esta sobre el elemento
+            $('p').mouseleave(function(){
+                $(this).css('color', 'black');
+            })
+        });
+    </script>
+</body>
+</html>
