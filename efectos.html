@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efectos jQuery</title>
+    <script src="jquery-3.1.1.min.js">  </script>
+    <style>
+        .caja{
+            background-color: dodgerblue;
+            width: 640px;
+            height: 480px;
+        }
+        .pelota{
+            background-color: darkorange;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .caja, .pelota{
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Ejemplos de efectos en jQuery</h1>
+    <h2> Ocultar y mostrar </h2>
+    <button id="btn_ocultar">  ocultar </button>
+    <button id="btn_mostrar"> mostrar </button>
+    <button id="btn_alternar"> alternar </button>
+    <p id="parrafo1"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque unde nihil ipsum tempora a sunt rerum repellendus asperiores vero porro animi, deleniti voluptates, at quasi autem esse ad repellat.</p>
+
+    <h2> Fundido gradual </h2>
+    <button id="btn_des">  fadeOut </button>
+    <button id="btn_apa"> fadeIn </button>
+    <button id="btn_alternarF"> fadeToogle </button>
+    <button id="btn_fadeTo"> fadeTo </button>
+    <p id="parrafo2"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque unde nihil ipsum tempora a sunt rerum repellendus asperiores vero porro animi, deleniti voluptates, at quasi autem esse ad repellat.</p>
+
+    <h2> Deslizamiento </h2>
+    <button id="btn_desArriba">  slidaUp </button>
+    <button id="btn_desAbajo"> slidaDown </button>
+    <button id="btn_desAlternado"> slideToggle </button>
+    <p id="parrafo3"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cumque unde nihil ipsum tempora a sunt rerum repellendus asperiores vero porro animi, deleniti voluptates, at quasi autem esse ad repellat.</p>
+
+
+    <h2> Animacion </h2>
+    <div class="caja">  
+        <div class="pelota">   </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            /*Ejemplo de animacion*/
+            $('.pelota').click(function(){
+                $(this).animate({
+                    width : '100px',
+                    height : '100px',
+                    left : '600px'
+                },10000).animate({left:'0px',top:'0px'});
+            })
+
+            /*Efectos de animacion part 1: ocultar y mostar*/
+            $('#btn_ocultar').click(function(){
+              $('#parrafo1').hide(1000,'linear'); 
+            })
+            $('#btn_mostrar').click(function(){
+              $('#parrafo1').show('slow','swing'); 
+            })
+            $('#btn_alternar').click(function(){
+              $('#parrafo1').toggle('fast',function(){
+                  alert('Hola');
+              });
+            })
+            
+            /*Efectos de animacion part 2: fundido gradual*/
+            $('#btn_des').click(function(){
+              $('#parrafo2').fadeOut(); 
+            })
+
+            $('#btn_apa').click(function(){
+              $('#parrafo2').fadeIn(); 
+            })
+            
+            $('#btn_alternarF').click(function(){
+              $('#parrafo2').fadeToggle('fast',function(){
+                  alert('Hola');
+              });
+            $('#btn_fadeTo').click(function(){
+              $('#parrafo2').fadeTo('slow',0.5);
+              });
+            })
+
+            /*Efectos de deslizamiento part 3: deslizamiento*/
+            $('#btn_desArriba').click(function(){
+              $('#parrafo3').slideUp(); 
+            })
+            $('#btn_desAbajo').click(function(){
+              $('#parrafo3').slideDown(); 
+            })
+            $('#btn_desAlternado').click(function(){
+              $('#parrafo3').slideToggle()
+            })
+        });
+    </script>
+</body>
+</html>
